@@ -113,7 +113,8 @@ a{
 }
 .container select{
   width: 40%;
-  height: 1em;
+  padding: 0;
+  height: 2em;
 }
 .container input[type="number"]{
   width: 4em;
