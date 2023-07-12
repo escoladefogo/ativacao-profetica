@@ -42,12 +42,11 @@ const phoneMask = (value) => {
 };
 
 
-function EnviarDados(nome, telefone, ministerio, outroMinisterio, numCriancas, pagamento){
+function EnviarDados(nome, telefone, ministerio, outroMinisterio, numCriancas, pagamento, cupom){
     var validado = true;
 
     var regexTel = new RegExp('(\\(?\\d{2}\\)?\\s)?(\\d{4,5}\\-\\d{4})');
-    
-    var criancas = document.querySelector('input[name="criancas"]:checked');
+    var tipoIngresso = document.querySelector('input[name="ingresso"]:checked');
 
     if(nome=="" || nome.length < 8){
         document.getElementById("nome").style.cssText= 'background: #e35858; color: #fff;';
@@ -77,15 +76,19 @@ function EnviarDados(nome, telefone, ministerio, outroMinisterio, numCriancas, p
         document.getElementById("pagamento").style.cssText= 'background: #e35858; color: #fff;';
     }else{
         document.getElementById("pagamento").style.cssText= 'background: #fff; color: #000;';
+    }if(tipoIngresso == null){
+        alert("Preencha o tipo do ingresso!");
+    }else{
+        tipoIngresso = tipoIngresso.value;
     }
 
 
     if(validado){
-        Gravar(nome, telefone);
+        Gravar(nome, telefone, ministerio, outroMinisterio, numCriancas, pagamento, cupom, tipoIngresso);
     }
 }
 
-function Gravar(nome, telefone){
+function Gravar(nome, telefone, ministerio, outroMinisterio, numCriancas, pagamento, cupom, tipoIngresso){
 
     fetch("https://sheetdb.io/api/v1/y6wzxu5btyj7l", {
     method: "POST",
@@ -97,6 +100,12 @@ function Gravar(nome, telefone){
             {
                 'Nome': nome,
                 'Telefone': telefone,
+                'IEF': ministerio,
+                'Ministerio': outroMinisterio,
+                'NumCriancas': numCriancas,
+                'CupomDesconto': cupom,
+                'Pagamento': pagamento,
+                'TipoIngresso': tipoIngresso,
             }
         ]
     }),

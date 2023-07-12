@@ -34,15 +34,16 @@
       <p><strong>Local do evento:</strong> Av. Henrique Diniz, 389, Nova Cachoeirinha</p>
       <p><strong>Investimento:</strong>
       <li>De 0 a 10 anos: Gratuito</li>
-      <li>De 11 a 14 anos: R$50,00</li>
-      <li>A partir de 15 anos: R$100</li></p>
+      <li>De 11 a 14 anos: Meia endrata</li>
+      <li>A partir de 15 anos: Inteira</li></p>
+      <p><strong>Valor do ingresso: </strong>R$100,00</p>
       <p>Será uma honra recebê-los para a escola de <strong>Ativação Profética</strong> em Belo Horizonte.</p>
       <input type="button" value="Inscreva-se agora" onclick="Form()">
     </div>
     
     <form id='form' hidden>
-      <input type="text" name="nome" id="nome" placeholder="Nome">
-      <input type="tel" name="telefone" id="telefone" placeholder="Telefone" onkeyup="handlePhone(event)">
+      <input type="text" name="nome" id="nome" placeholder="Nome Completo">
+      <input type="tel" name="telefone" id="telefone" placeholder="(31)99999-9999" onkeyup="handlePhone(event)">
       Qual o seu ministério?
       <select id="selectministerio" onchange="Ministerio(this.value)">
         <option selected value="">Selecione</option>
@@ -55,14 +56,18 @@
       <input type="text" id="ministerio" placeholder="Qual ministério você faz parte?" hidden>
       Você trará crianças para o evento? (De 3 a 10 anos)  <input type="radio" name="criancas" id="sim" value="Sim" onchange="Criancas(this.value)"> Sim <input type="radio" name="criancas" id="nao" value="Nao" onchange="Criancas(this.value)"> Não <br>
       <div id="criancas" hidden>Quantas crianças? <input type="number" id="numCriancas"></div><br>
-      <input type="text" placeholder="Cupom de desconto">
+      <input type="text" id="cupom" placeholder="Cupom de desconto">
       Qual a forma de pagamento?
       <select name="" id="pagamento">
         <option selected value="">Selecione</option>
         <option value="pix">PIX</option>
         <option value="cartao">Cartão de Crédito</option>
       </select>
-      <input type="button" value="Enviar" onclick="EnviarDados(this.form.nome.value, this.form.telefone.value, this.form.selectministerio.value, this.form.ministerio.value,this.form.numCriancas.value, this.form.pagamento.value)">
+      <p>Qual tipo de ingresso?
+          <input type="radio" name="ingresso" id="inteira" value="Inteira"> Inteira
+          <input type="radio" name="ingresso" id="meia" value="Meia"> Meia
+      </p>
+      <input type="button" value="Enviar" onclick="EnviarDados(this.form.nome.value, this.form.telefone.value, this.form.selectministerio.value, this.form.ministerio.value,this.form.numCriancas.value, this.form.pagamento.value, this.form.cupom.value)">
     </form>
 
     <div class="sucesso" id="sucesso" hidden>
