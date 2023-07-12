@@ -28,6 +28,26 @@ function Criancas(resposta){
     };
 }
 
+function EnviarDados(nome, telefone){
+    var validado = true;
+    if(nome=="" || nome.length < 8){
+        document.getElementById("nome").style.cssText= 'background: #e35858;';
+        document.getElementById("nome").focus();
+        validado = false;
+    }else{
+        document.getElementById("nome").style.cssText= 'background: #fff;';
+    }
+    //Nessesário criar uma validação de telefone
+    if(telefone=="" || telefone.length < 8){
+        document.getElementById("telefone").style.cssText= 'background: #e35858;';
+        document.getElementById("telefone").focus();
+        validado = false;
+    }
+    if(validado){
+        Gravar(nome, telefone);
+    }
+}
+
 function Gravar(nome, telefone){
 
     fetch("https://sheetdb.io/api/v1/y6wzxu5btyj7l", {
