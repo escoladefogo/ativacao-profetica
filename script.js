@@ -47,6 +47,7 @@ function EnviarDados(nome, telefone, ministerio, outroMinisterio, numCriancas, p
 
     var regexTel = new RegExp('(\\(?\\d{2}\\)?\\s)?(\\d{4,5}\\-\\d{4})');
     var tipoIngresso = document.querySelector('input[name="ingresso"]:checked');
+    var criancas = document.querySelector('input[name="criancas"]:checked');
 
     if(nome=="" || nome.length < 8){
         document.getElementById("nome").style.cssText= 'background: #e35858; color: #fff;';
@@ -69,7 +70,7 @@ function EnviarDados(nome, telefone, ministerio, outroMinisterio, numCriancas, p
     }else{
         document.getElementById("selectministerio").style.cssText= 'background: #fff; color: #000;';
         document.getElementById("ministerio").style.cssText= 'background: #fff; color: #000;';
-    }if(numCriancas < 1 || numCriancas == null){
+    }if((numCriancas < 1 || numCriancas == null && criancas.value == "Sim") && (criancas != null && criancas.value == "Sim")){
         document.getElementById("numCriancas").style.cssText= 'background: #e35858; color: #fff;';
         validado = false;
     }else{
