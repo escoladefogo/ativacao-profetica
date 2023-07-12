@@ -65,19 +65,23 @@ function EnviarDados(nome, telefone, ministerio, outroMinisterio, numCriancas, p
     if(!(ministerio == "IEF-BH" || ministerio == "IEF-BSB" || ministerio == "IEF-RJ" || ministerio == "IEF-SP" ||outroMinisterio != "")){
         document.getElementById("selectministerio").style.cssText= 'background: #e35858; color: #fff;';
         document.getElementById("ministerio").style.cssText= 'background: #e35858; color: #fff;';
+        validado = false;
     }else{
         document.getElementById("selectministerio").style.cssText= 'background: #fff; color: #000;';
         document.getElementById("ministerio").style.cssText= 'background: #fff; color: #000;';
     }if(numCriancas < 1 || numCriancas == null){
         document.getElementById("numCriancas").style.cssText= 'background: #e35858; color: #fff;';
+        validado = false;
     }else{
         document.getElementById("numCriancas").style.cssText= 'background: #fff; color: #000;';
     }if(pagamento == ""){
         document.getElementById("pagamento").style.cssText= 'background: #e35858; color: #fff;';
+        validado = false;
     }else{
         document.getElementById("pagamento").style.cssText= 'background: #fff; color: #000;';
     }if(tipoIngresso == null){
         alert("Preencha o tipo do ingresso!");
+        validado = false;
     }else{
         tipoIngresso = tipoIngresso.value;
     }
