@@ -101,7 +101,7 @@ function Gravar(nome, telefone, ministerio, outroMinisterio, numCriancas, pagame
 
     document.getElementById('c-loader').removeAttribute("hidden");
     
-    fetch("https://sheetdb.io/api/v1/y6wzxu5btyj7l", {
+    fetch("https://sheetdb.io/api/v1/sphncacsye8pr", {
     method: "POST",
     headers: {
         "Content-Type": "application/json",
