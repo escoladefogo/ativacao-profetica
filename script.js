@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function() {
+        document.getElementById('header').removeAttribute("hidden");
         document.getElementById('container').removeAttribute("hidden");
 
         document.getElementById('c-loader').setAttribute("hidden", "true");
