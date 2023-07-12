@@ -2,6 +2,10 @@
   font-family: GothamItalic;
   src: url(./fonts/GothamBlackItalic.otf) format('opentype');
 }
+@font-face {
+  font-family: GothamProLight;
+  src: url(./fonts/GothamProLight.ttf) format('opentype');
+}
 
 *{
   margin: 0;
@@ -16,7 +20,24 @@ body {
     height: 100vh;
     margin: 0;
 }
-  
+
+.c-loader {
+  animation: is-rotating 1s infinite;
+  border: 6px solid #a88f7b;
+  border-radius: 50%;
+  border-top-color: #933816;
+  height: 250px;
+  width: 250px;
+}
+
+@keyframes is-rotating {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+
+
 header{
   font-family: 'GothamItalic';
   color: #a88f7b;
@@ -53,6 +74,8 @@ header h2{
 
 
 .container {
+  font-family: GothamProLight;
+
   background-color: #933816;
   padding: 20px;
   border-radius: 5px;

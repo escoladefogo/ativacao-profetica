@@ -1,3 +1,15 @@
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        document.getElementById('header').removeAttribute("hidden");
+        document.getElementById('container').removeAttribute("hidden");
+
+        document.getElementById('c-loader').setAttribute("hidden", "false");
+    }, 2000);
+
+    
+});
+
+
 function Form(){
    document.getElementById('text').style.cssText = 'display: none;';
    document.getElementById('form').style.cssText = 'display: block;';

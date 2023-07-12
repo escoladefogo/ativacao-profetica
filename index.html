@@ -6,20 +6,21 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
+  <div class="c-loader" id="c-loader"></div>
+  <header id="header" hidden>
     <h1>ATIVAÇÃO</h1>
     <h2>PROFÉTICA</h2>
     <div id="bgprofetica"></div>
   </header>
-  <div class="container">
-    <div id="text" style="display: none;">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p>Aliquam malesuada bibendum arcu vitae elementum curabitur. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. In nulla posuere sollicitudin aliquam. Eget gravida cum sociis natoque penatibus et magnis dis parturient. Potenti nullam ac tortor vitae purus faucibus ornare suspendisse. Arcu felis bibendum ut tristique et egestas quis ipsum suspendisse. Proin fermentum leo vel orci porta non pulvinar neque. In iaculis nunc sed augue lacus viverra vitae congue. Mi sit amet mauris commodo quis. Tortor dignissim convallis aenean et tortor at. Sed libero enim sed faucibus turpis. Id porta nibh venenatis cras sed felis eget. Purus faucibus ornare suspendisse sed nisi lacus. Vulputate mi sit amet mauris.</p>
-      <p>Nulla posuere sollicitudin aliquam ultrices sagittis. Non consectetur a erat nam at lectus. Sed enim ut sem viverra aliquet eget sit amet. Gravida neque convallis a cras semper auctor neque vitae tempus. Lorem ipsum dolor sit amet consectetur adipiscing. Condimentum lacinia quis vel eros donec ac odio tempor. Ut pharetra sit amet aliquam id diam. Venenatis a condimentum vitae sapien. Amet volutpat consequat mauris nunc congue. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Pharetra convallis posuere morbi leo urna molestie. Dignissim cras tincidunt lobortis feugiat vivamus at. Ipsum suspendisse ultrices gravida dictum fusce ut. Mauris augue neque gravida in.</p>
+  <div class="container" id="container" hidden>
+    <div id="text">
+      <p></p>
+      <p></p>
+      <p></p>
       <input type="submit" value="Inscreva-se agora" onclick="Form()">
     </div>
     
-    <form id='form' >
+    <form id='form' style="display: none;">
       <input type="text" name="nome" placeholder="Nome">
       <input type="tel" name="telefone" placeholder="Telefone">
       Qual o seu ministério?
