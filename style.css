@@ -83,6 +83,7 @@ header h2{
   border-radius: 5px;
   max-width: 550px;
   width: 100%;
+  min-height: 350px;
 
   position: absolute;
   top: 25%;
@@ -93,6 +94,10 @@ header h2{
   
 }
 
+a{
+  color: #ccd3de;
+  text-decoration: underline;
+}
 .container input,
 .container select{
   padding: 10px;
@@ -125,11 +130,14 @@ header h2{
 .container input[type="submit"]:hover {
   background-color: #000;
 }
-
-a{
-  color: #ccd3de;
-  text-decoration: underline;
+.sucesso{
+  text-align: center;
 }
+.sucesso img{
+  width: 20%;
+  filter: invert(87%) sepia(8%) saturate(6502%) hue-rotate(73deg) brightness(100%) contrast(90%);
+}
+
 
 @media (max-height: 720px) {
   header{
@@ -137,6 +145,9 @@ a{
   }
   .container{
     top: 35%;
+  }
+  .container input[type="submit"]{
+    height: 3em;
   }
 }
 
@@ -146,6 +157,9 @@ a{
   }
   .container{
     top: 35%;
+  }
+  .container input[type="submit"]{
+    height: 3em;
   }
 }
 
@@ -162,7 +176,9 @@ a{
   .container{
     max-width: 400;
   }
-  
+  .container input[type="submit"]{
+    height: 3em;
+  }
 }
 
 @media (max-width: 430px)
@@ -178,7 +194,9 @@ a{
   .container{
     max-width: 300;
   }
-  
+  .container input[type="submit"]{
+    height: 3em;
+  }
 }
 
 @media (max-width: 290px)
@@ -194,5 +212,7 @@ a{
   .container{
     max-width: 250;
   }
-  
+  .container input[type="submit"]{
+    height: 3em;
+  }
 }

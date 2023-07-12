@@ -4,10 +4,16 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('container').removeAttribute("hidden");
 
         document.getElementById('c-loader').setAttribute("hidden", "true");
-    }, 2000);
+    }, 20);
 
     
 });
+
+
+function Enviar(){
+    document.getElementById('form').setAttribute("hidden", "false");
+    document.getElementById('sucesso').removeAttribute("hidden");
+ }
 
 
 function Form(){

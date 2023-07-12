@@ -12,7 +12,7 @@
     <h2>PROFÉTICA</h2>
     <div id="bgprofetica"></div>
   </header>
-  <div class="container" id="container" hidden>
+  <div class="container" id="container" >
 
   
 
@@ -39,7 +39,7 @@
       <input type="submit" value="Inscreva-se agora" onclick="Form()">
     </div>
     
-    <form id='form' hidden>
+    <div id='form' hidden>
       <input type="text" name="nome" placeholder="Nome">
       <input type="tel" name="telefone" placeholder="Telefone">
       Qual o seu ministério?
@@ -59,8 +59,16 @@
         <option value="">PIX</option>
         <option value="">Cartão de Crédito</option>
       </select>
-      <input type="submit" value="Enviar">
-    </form>
+      <input type="submit" value="Enviar" onclick="Enviar()">
+    </div>
+
+    <div class="sucesso" id="sucesso" hidden>
+      <img src="./icons/sucesso.png" alt=""><br><br><br>
+      <p>Sua inscrição foi finalizada com sucesso</p>
+      <p>Entraremos em contato via WhatsApp no número cadastrado pelo formulário anterior.</p>
+      <p>Obs.: O pagamento será tratado via WhatsApp, mas fique tranquilo, vamos utilizar metodos de pagamentos seguros.</p>
+      <p>Deus abençoe!</p>
+    </div>
   </div>
   <script src="./script.js"></script>
 </body>
