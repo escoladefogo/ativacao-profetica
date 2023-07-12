@@ -28,8 +28,27 @@ function Criancas(resposta){
     };
 }
 
-function EnviarDados(nome, telefone){
+const handlePhone = (event) => {
+    let input = event.target
+    input.value = phoneMask(input.value)
+};
+
+const phoneMask = (value) => {
+    if (!value) return ""
+    value = value.replace(/\D/g,'')
+    value = value.replace(/(\d{2})(\d)/,"($1) $2")
+    value = value.replace(/(\d)(\d{4})$/,"$1-$2")
+    return value
+};
+
+
+function EnviarDados(nome, telefone, ministerio, outroMinisterio, numCriancas, pagamento){
     var validado = true;
+
+    var regexTel = new RegExp('(\\(?\\d{2}\\)?\\s)?(\\d{4,5}\\-\\d{4})');
+    
+    var criancas = document.querySelector('input[name="criancas"]:checked');
+
     if(nome=="" || nome.length < 8){
         document.getElementById("nome").style.cssText= 'background: #e35858; color: #fff;';
         document.getElementById("nome").focus();
@@ -37,14 +56,30 @@ function EnviarDados(nome, telefone){
     }else{
         document.getElementById("nome").style.cssText= 'background: #fff; color: #000;';
     }
-    //Nessesário criar uma validação de telefone
-    if(telefone=="" || telefone.length < 8){
+    if(!regexTel.test(telefone)){
         document.getElementById("telefone").style.cssText= 'background: #e35858; color: #fff;';
         document.getElementById("telefone").focus();
         validado = false;
     }else{
         document.getElementById("telefone").style.cssText= 'background: #fff; color: #000;';
     }
+    if(!(ministerio == "IEF-BH" || ministerio == "IEF-BSB" || ministerio == "IEF-RJ" || ministerio == "IEF-SP" ||outroMinisterio != "")){
+        document.getElementById("selectministerio").style.cssText= 'background: #e35858; color: #fff;';
+        document.getElementById("ministerio").style.cssText= 'background: #e35858; color: #fff;';
+    }else{
+        document.getElementById("selectministerio").style.cssText= 'background: #fff; color: #000;';
+        document.getElementById("ministerio").style.cssText= 'background: #fff; color: #000;';
+    }if(numCriancas < 1 || numCriancas == null){
+        document.getElementById("numCriancas").style.cssText= 'background: #e35858; color: #fff;';
+    }else{
+        document.getElementById("numCriancas").style.cssText= 'background: #fff; color: #000;';
+    }if(pagamento == ""){
+        document.getElementById("pagamento").style.cssText= 'background: #e35858; color: #fff;';
+    }else{
+        document.getElementById("pagamento").style.cssText= 'background: #fff; color: #000;';
+    }
+
+
     if(validado){
         Gravar(nome, telefone);
     }
