@@ -31,17 +31,19 @@ function Criancas(resposta){
 function EnviarDados(nome, telefone){
     var validado = true;
     if(nome=="" || nome.length < 8){
-        document.getElementById("nome").style.cssText= 'background: #e35858;';
+        document.getElementById("nome").style.cssText= 'background: #e35858; color: #fff;';
         document.getElementById("nome").focus();
         validado = false;
     }else{
-        document.getElementById("nome").style.cssText= 'background: #fff;';
+        document.getElementById("nome").style.cssText= 'background: #fff; color: #000;';
     }
     //Nessesário criar uma validação de telefone
     if(telefone=="" || telefone.length < 8){
-        document.getElementById("telefone").style.cssText= 'background: #e35858;';
+        document.getElementById("telefone").style.cssText= 'background: #e35858; color: #fff;';
         document.getElementById("telefone").focus();
         validado = false;
+    }else{
+        document.getElementById("telefone").style.cssText= 'background: #fff; color: #000;';
     }
     if(validado){
         Gravar(nome, telefone);
