@@ -9,13 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
     
 });
 
-
-function Enviar(){
-    document.getElementById('form').setAttribute("hidden", "false");
-    document.getElementById('sucesso').removeAttribute("hidden");
- }
-
-
 function Form(){
    document.getElementById('text').setAttribute("hidden", "false");
    document.getElementById('form').removeAttribute("hidden");
@@ -54,6 +47,8 @@ function Gravar(nome, telefone){
     .then((response) => response.json())
     .then((data) => {
         console.log("Success:", data);
+        document.getElementById('form').setAttribute("hidden", "false");
+        document.getElementById('sucesso').removeAttribute("hidden");
     })
     .catch((error) => {
         console.error("Error:", error);

@@ -108,7 +108,7 @@ a{
 }
 .container input[type="text"],
 .container input[type="tel"],
-.container input[type="submit"]{
+.container input[type="button"]{
   width: 100%;
 }
 .container select{
@@ -120,14 +120,14 @@ a{
   height: 1em;
   text-decoration: none;
 }
-.container input[type="submit"] {
+.container input[type="button"] {
   background-color: #2d180d;
   color: #fff;
   margin-top: 25px;
   cursor: pointer;
 }
 
-.container input[type="submit"]:hover {
+.container input[type="button"]:hover {
   background-color: #000;
 }
 .sucesso{
@@ -146,7 +146,7 @@ a{
   .container{
     top: 35%;
   }
-  .container input[type="submit"]{
+  .container input[type="button"]{
     height: 3em;
   }
 }
@@ -158,7 +158,7 @@ a{
   .container{
     top: 35%;
   }
-  .container input[type="submit"]{
+  .container input[type="button"]{
     height: 3em;
   }
 }
@@ -176,7 +176,7 @@ a{
   .container{
     max-width: 400;
   }
-  .container input[type="submit"]{
+  .container input[type="button"]{
     height: 3em;
   }
 }
@@ -194,7 +194,7 @@ a{
   .container{
     max-width: 300;
   }
-  .container input[type="submit"]{
+  .container input[type="button"]{
     height: 3em;
   }
 }
@@ -212,7 +212,7 @@ a{
   .container{
     max-width: 250;
   }
-  .container input[type="submit"]{
+  .container input[type="button"]{
     height: 3em;
   }
 }

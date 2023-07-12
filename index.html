@@ -36,12 +36,12 @@
       <p><strong>Local do evento:</strong> Av. Henrique Diniz, 389, Nova Cachoeirinha</p>
       <p><strong>Investimento:</strong> R$100</p>
       <p>Será uma honra recebê-los para a escola de <strong>Ativação Profética</strong> em Belo Horizonte.</p>
-      <input type="submit" value="Inscreva-se agora" onclick="Form()">
+      <input type="button" value="Inscreva-se agora" onclick="Form()">
     </div>
     
-    <div id='form' hidden>
-      <input type="text" name="nome" placeholder="Nome">
-      <input type="tel" name="telefone" placeholder="Telefone">
+    <form id='form' hidden>
+      <input type="text" name="nome" id="nome" placeholder="Nome">
+      <input type="tel" name="telefone" id="telefone" placeholder="Telefone">
       Qual o seu ministério?
       <select id="select-ministerio" onchange="Ministerio(this.value)">
         <option value="IEF">IEF - BH</option>
@@ -59,8 +59,8 @@
         <option value="">PIX</option>
         <option value="">Cartão de Crédito</option>
       </select>
-      <input type="submit" value="Enviar" onclick="Enviar()">
-    </div>
+      <input type="button" value="Enviar" onclick="Gravar(this.form.nome.value, this.form.telefone.value)">
+    </form>
 
     <div class="sucesso" id="sucesso" hidden>
       <img src="./icons/sucesso.png" alt=""><br><br><br>
@@ -68,6 +68,7 @@
       <p>Entraremos em contato via WhatsApp no número cadastrado pelo formulário anterior.</p>
       <p>Obs.: O pagamento será tratado via WhatsApp, mas fique tranquilo, vamos utilizar metodos de pagamentos seguros.</p>
       <p>Deus abençoe!</p>
+      <p>Muito obrigado! IEF BH</p>
     </div>
   </div>
   <script src="./script.js"></script>
