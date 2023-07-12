@@ -2,16 +2,16 @@ document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function() {
         document.getElementById('container').removeAttribute("hidden");
 
-        document.getElementById('c-loader').setAttribute("hidden", "false");
-    }, 20);
+        document.getElementById('c-loader').setAttribute("hidden", "true");
+    }, 2000);
 
     
 });
 
 
 function Form(){
-   document.getElementById('text').style.cssText = 'display: none;';
-   document.getElementById('form').style.cssText = 'display: block;';
+   document.getElementById('text').setAttribute("hidden", "false");
+   document.getElementById('form').removeAttribute("hidden");
 }
 function Ministerio(resposta){
     if (resposta == "Outro") {
