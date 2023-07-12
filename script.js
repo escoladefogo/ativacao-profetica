@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('container').removeAttribute("hidden");
 
         document.getElementById('c-loader').setAttribute("hidden", "true");
-    }, 20);
+    }, 2000);
 
     
 });
@@ -90,6 +90,12 @@ function EnviarDados(nome, telefone, ministerio, outroMinisterio, numCriancas, p
 
 function Gravar(nome, telefone, ministerio, outroMinisterio, numCriancas, pagamento, cupom, tipoIngresso){
 
+    document.getElementById('header').setAttribute("hidden", "true");
+    document.getElementById('container').setAttribute("hidden", "true");
+    document.getElementById('form').setAttribute("hidden", "true");
+
+    document.getElementById('c-loader').removeAttribute("hidden");
+    
     fetch("https://sheetdb.io/api/v1/y6wzxu5btyj7l", {
     method: "POST",
     headers: {
@@ -112,11 +118,17 @@ function Gravar(nome, telefone, ministerio, outroMinisterio, numCriancas, pagame
     })
     .then((response) => response.json())
     .then((data) => {
-        console.log("Success:", data);
-        document.getElementById('form').setAttribute("hidden", "false");
-        document.getElementById('sucesso').removeAttribute("hidden");
+        if(data.created){
+            document.getElementById('header').removeAttribute("hidden");
+            document.getElementById('container').removeAttribute("hidden");
+            document.getElementById('c-loader').setAttribute("hidden", "true");
+            document.getElementById('sucesso').removeAttribute("hidden");
+        }else{
+            alert("Tivemos um erro ao realizar a sua inscrição, favor tentar novamente mais tarde!")
+        }
     })
     .catch((error) => {
         console.error("Error:", error);
+        alert("Tivemos um erro ao realizar a sua inscrição, favor tentar novamente mais tarde!")
     });
  }
